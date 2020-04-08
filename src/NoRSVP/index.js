@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import './index.scss'
+import {useSpring, animated} from 'react-spring'
 
 export default () => {
-
+  const props = useSpring({opacity: 1, from: {opacity: 0}})
   return <div className="container max-width window-height max-flex-room">
-    <div className="container max-flex-room flex-column justify-center align-center">
+    <animated.div style={props} className="container max-flex-room flex-column justify-center align-center">
       <h3>Ms. {process.env.REACT_APP_RECIPIENT}</h3>
 
       <p>I must decline my attendance to your Corona Fiesta, </p>
